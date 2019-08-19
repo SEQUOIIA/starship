@@ -7,6 +7,7 @@ mod git_status;
 mod golang;
 mod hostname;
 mod jobs;
+mod kubernetes;
 mod line_break;
 mod nix_shell;
 mod nodejs;
@@ -42,6 +43,7 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
         "jobs" => jobs::module(context),
         "nix_shell" => nix_shell::module(context),
         "hostname" => hostname::module(context),
+        "kubernetes" => kubernetes::module(context),
 
         _ => {
             eprintln!("Error: Unknown module {}. Use starship module --list to list out all supported modules.", module);

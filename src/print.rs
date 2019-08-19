@@ -24,6 +24,7 @@ const DEFAULT_PROMPT_ORDER: &[&str] = &[
     "python",
     "golang",
     "nix_shell",
+    "kubernetes",
     "cmd_duration",
     "line_break",
     "jobs",
