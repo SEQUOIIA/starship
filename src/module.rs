@@ -15,6 +15,7 @@ pub const ALL_MODULES: &[&str] = &[
     "git_status",
     "golang",
     "jobs",
+    "kubernetes",
     "line_break",
     "nodejs",
     "nix_shell",
