@@ -13,18 +13,14 @@ use super::{Context, Module};
 pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     let user = env::var("USER").ok();
     let logname = env::var("LOGNAME").ok();
-    let ssh_connection = env::var("SSH_CONNECTION").ok();
 
     let mut module_color = Color::Yellow.bold();
 
-    if user != logname || ssh_connection.is_some() || is_root(&mut module_color) {
-        let mut module = context.new_module("username")?;
-        module.set_style(module_color);
-        module.new_segment("username", &user?);
+    let mut module = context.new_module("username")?;
+    module.set_style(module_color);
+    module.new_segment("username", &user?);
 
-        return Some(module);
-    }
-
+    return Some(module);
     None
 }
 
